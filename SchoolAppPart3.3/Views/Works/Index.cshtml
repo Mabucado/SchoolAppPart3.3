@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SchoolAppPart3._3.Models.Work>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container-p3" style="background:#DCDCDC">
+<h1 class="text-center">Index</h1>
+
+    <p class="btn btn-primary text-black" style="background-color:#8f8f8f">
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkHours)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkHours)
+            </td>
+            <td>
+                <div id="button" class="btn btn-primary text-black" style="background-color:#8f8f8f">
+                            <button> <a asp-action="Edit" asp-route-id="@item.WorkCode">Edit</a></button> |
+                            <button><a asp-action="Details" asp-route-id="@item.WorkCode">Details</a></button> |
+                            <button> <a asp-action="Delete" asp-route-id="@item.WorkCode">Delete</a></button>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

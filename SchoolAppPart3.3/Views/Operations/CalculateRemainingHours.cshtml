@@ -1,0 +1,35 @@
+﻿@model SchoolAppPart3._3.Models.Modules
+@{
+    ViewData["Title"] = "CalculateSelfStudy";
+    var remainingHours = TempData["RemainingHours"];
+    TempData.Keep("noSemesterWeek");
+    var noSemesterWeek = TempData["noSemesterWeek"];
+    var date = TempData["dateWeek"];
+    
+    TempData.Keep("dateWeek");
+
+}
+
+<h1>Calculate Remaining Hours</h1>
+<form asp-action="CalculateRemainingHours">
+    <label asp-for="Code">Enter module code</label>
+    <input name="Code" class="form-control" />
+    <label asp-for="Name">Enter module name</label>
+    <input name="Name" class="form-control" />
+    <input name="noSemester" type="hidden" class="form-control" value="@noSemesterWeek" />
+    <input type="submit" value="Enter" />
+
+    <span asp-validation-for="Code"></span>
+</form>
+
+@{
+    if (remainingHours==null)
+    {
+        <p>Nothing to show</p>
+        
+    }
+    else
+    {
+        <p>The remaining hours for week @date is @remainingHours</p>
+    }
+}

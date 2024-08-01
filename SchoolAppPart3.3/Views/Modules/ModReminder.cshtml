@@ -1,0 +1,23 @@
+﻿@model SchoolAppPart3._3.Models.VMLogin
+@{
+    ViewData["Title"] = "ReminderForm";
+}
+
+<h1>ReminderForm</h1>
+
+<form asp-action="ModReminder">
+    <div class="form-group">
+        <label asp-for="Module" class="control-label"></label>
+        <input asp-for="Module" class="form-control" />
+        <span asp-validation-for="Module" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Date" class="control-label"></label>
+        <input asp-for="Date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Enter" class="btn btn-primary" />
+    </div>
+
+</form>

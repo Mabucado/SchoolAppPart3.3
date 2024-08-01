@@ -1,0 +1,32 @@
+﻿@model SchoolAppPart3._3.Models.Modules
+@{
+    ViewData["Title"] = "CalculateSelfStudy";
+    var dateWeek = TempData["dateWeek"];
+    var selfStuHours = TempData["selfStuHours"];
+    TempData.Keep("noSemesterWeek");
+    var noSemesterWeek = TempData["noSemesterWeek"];
+}
+
+<h1>CalculateSelfStudy</h1>
+<form asp-action="CalculateSelfStudy">
+    <label asp-for="Code">Enter module code</label>
+    <input asp-for="Code" class="form-control" />
+    <label asp-for="Name">Enter module name</label>
+    <input asp-for="Name" class="form-control" />
+    <input name="noSemester" type="hidden" class="form-control" value="@noSemesterWeek" />
+   <input  type="submit" value="Enter" />
+
+    <span asp-validation-for="Code"></span>
+</form>
+
+@{
+    if (selfStuHours==null)
+    {
+        <p>Nothing to show</p>
+        
+    }
+    else
+    {
+        <p>Self study hours is @selfStuHours</p>
+    }
+}

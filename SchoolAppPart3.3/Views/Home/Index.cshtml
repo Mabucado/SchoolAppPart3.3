@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SchoolAppPart3._3.Models.VMLogin>
+@{
+    
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center ">
+    <h1 class="display-4">Welcome to SchoolApp</h1>
+    
+</div>
+<h3>Module Remiders</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Module)
+                
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Module)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+              
+            </tr>
+        }
+    </tbody>
+</table>
