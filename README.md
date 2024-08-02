@@ -30,6 +30,8 @@ cd SchoolAppPart3.3
 
 ### 2. Run the web-app using Visual Studio
 
+### 3. Run the sql file named SCHOOL.sql
+
 ### 3. How to use the web app
 -Step 1 Register an account
 -Step 2 Login
